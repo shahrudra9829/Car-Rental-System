@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
-require('dotenv').config()
+import env from "dotenv";
+
+env.config();
 MONG0_URI = process.env.MONG0_URI
 
 function connectDB(){

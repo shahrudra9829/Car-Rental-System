@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
-require("dotenv").config();
+import env from "dotenv";
 const port = process.env.PORT || 5000;
 const dbConnection = require("./db");
 
+env.config();
 app.use(express.json());
 
 app.use("/api/cars/", require("./routes/carsRoute"));

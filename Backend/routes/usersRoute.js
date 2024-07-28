@@ -3,7 +3,8 @@ const router = express.Router();
 const User = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-require("dotenv").config();
+import env from "dotenv";
+env.config();
 const JWT_SECRET = process.env.JWT_SECRET;
 
 // Register a new user

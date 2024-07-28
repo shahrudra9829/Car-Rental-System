@@ -3,9 +3,10 @@ const router = express.Router();
 const Booking = require("../models/bookingModel");
 const Car = require("../models/carModel");
 const { v4: uuidv4 } = require("uuid");
-const stripe = require("stripe")(
-  "sk_test_51IYnC0SIR2AbPxU0EiMx1fTwzbZXLbkaOcbc2cXx49528d9TGkQVjUINJfUDAnQMVaBFfBDP5xtcHCkZG1n1V3E800U7qXFmGf"
-);
+import env from "dotenv";
+
+env.config();
+const stripe = require("stripe")(process.env.PRIVATE_KEY);
 
 // Get all bookings belonging to the authenticated user
 router.get("/getuserbookings", async (req, res) => {
